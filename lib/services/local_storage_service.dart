@@ -2,12 +2,12 @@ import 'package:get_storage/get_storage.dart';
 
 class LocalStorageService{
   /// =============== instance of the singleton
-  static final LocalStorageService _instance = LocalStorageService._internal();
+  static final LocalStorageService _instance = LocalStorageService._getInstance();
   /// =============== instance of GetStorage
   late GetStorage _storage;
 
   /// =============== private constructor for the singleton
-  LocalStorageService._internal(){
+  LocalStorageService._getInstance(){
     _storage = GetStorage();
   }
 

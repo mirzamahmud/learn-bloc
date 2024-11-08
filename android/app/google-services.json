@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "133879982671",
+    "project_id": "learn-bloc-c445f",
+    "storage_bucket": "learn-bloc-c445f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133879982671:android:1c0522640d27981256183a",
+        "android_client_info": {
+          "package_name": "com.example.learn_bloc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDk5kGM3a6u2ABVUnD1uibY0QI3GyYjGTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

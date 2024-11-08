@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_bloc/my_app.dart';
+import 'package:learn_bloc/services/firebase_service.dart';
 import 'package:learn_bloc/services/local_storage_service.dart';
 
 Future<void> main() async {
@@ -7,6 +8,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   /// ========== initialize local storage service
   await LocalStorageService.init();
+  /// ========== initialize firebase service
+  await FirebaseService.initialize();
   /// ========== used to launch your Flutter application by inflating the widget tree starting with the root widget
   runApp(const MyApp());
 }

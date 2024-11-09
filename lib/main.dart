@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_bloc/core/utils/system/app_system_utils.dart';
 import 'package:learn_bloc/my_app.dart';
 import 'package:learn_bloc/routes/app_routes.dart';
 import 'package:learn_bloc/routes/app_screens.dart';
@@ -14,6 +15,10 @@ Future<void> main() async {
   await LocalStorageService.init();
   /// ========== initialize firebase service
   await FirebaseService.initialize();
+  /// ========== system ui overlay style
+  AppSystemUtils.systemUIOverlay();
+  /// ========== device orientation
+  AppSystemUtils.deviceOrientation();
   /// ========== used to launch your Flutter application by inflating the widget tree starting with the root widget
   runApp(const MyApp());
 }

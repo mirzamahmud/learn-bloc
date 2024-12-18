@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:learn_bloc/data/repo/home/home_repo.dart';
+import 'package:learn_bloc/core/dependency/dependency_injector.dart';
 import 'package:learn_bloc/features/home/bloc/home_bloc.dart';
 import 'package:learn_bloc/features/home/inner_widget/home_products_widget.dart';
-import 'package:learn_bloc/service/api_service.dart';
 import 'package:learn_bloc/utils/color/app_colors.dart';
 import 'package:learn_bloc/utils/dimension/app_text_size.dart';
 
@@ -16,17 +15,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late final ApiService apiService;
-  late final HomeRepo homeRepo;
   late final HomeBloc homeBloc;
 
   @override
   void initState() {
     super.initState();
-    apiService = ApiService();
-    homeRepo = HomeRepo(apiService: apiService);
-    homeBloc = HomeBloc(homeRepo: homeRepo);
-
+    homeBloc = HomeBloc(homeRepo: getIt());
     homeBloc.add(HomeStartEvent());
   }
 

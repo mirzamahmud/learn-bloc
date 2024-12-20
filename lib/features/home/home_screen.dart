@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:learn_bloc/core/dependency/dependency_injector.dart';
 import 'package:learn_bloc/features/home/bloc/home_bloc.dart';
+import 'package:learn_bloc/features/home/inner_widget/home_data_loading_widget.dart';
 import 'package:learn_bloc/features/home/inner_widget/home_products_widget.dart';
 import 'package:learn_bloc/utils/color/app_colors.dart';
 import 'package:learn_bloc/utils/dimension/app_text_size.dart';
@@ -67,9 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
           body: BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) {
               if(state is HomeLoadingState){
-                return const Center(
-                  child: CircularProgressIndicator(color: AppColors.blackColor),
-                );
+                return const HomeDataLoadingWidget();
               }else if(state is HomeLoadedState){
                 return HomeProductsWidget(productList: state.allProductList);
               }

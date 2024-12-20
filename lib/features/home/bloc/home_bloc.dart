@@ -18,12 +18,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState>{
 
   List<AllProductsModel> allProductList = [];
 
-  Future<List<AllProductsModel>> fetchData() async{
+  Future<void> fetchData() async{
     ApiResponseModel apiResponseModel = await homeRepo.getAllProducts();
     if (apiResponseModel.isSuccessful) {
       allProductList = (apiResponseModel.data as List).map((e) => AllProductsModel.fromMap(e)).toList();
     }
-
-    return allProductList;
   }
 }
